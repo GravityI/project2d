@@ -52,11 +52,20 @@ func takeDamage():
 	stateMachine.set_state(stateMachine.states.HIT)
 	
 
-func _on_ComboTimer_timeout():
-	pass
+func getEnemiesInRange():
+	var bodyList = []
+	for body in combat.get_overlapping_bodies():
+		if body.is_in_group("enemy"):
+			bodyList.append(body)
+	return bodyList
+
+func dealDamage():
+	if !getEnemiesInRange().empty():
+		for body in getEnemiesInRange():
+			body.takeDamage()
 
 func _on_AttackTimer_timeout():
 	stateMachine.set_state(stateMachine.states.IDLE)
-
+	
 func _on_HitTimer_timeout():
 	stateMachine.set_state(stateMachine.states.IDLE)

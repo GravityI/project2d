@@ -37,10 +37,10 @@ func _get_transition(delta):
 			elif Input.is_action_just_pressed("attack"):
 				return states.ATTACKING
 		states.ATTACKING:
-			if Input.is_action_just_pressed("attack"):
+			if Input.is_action_just_pressed("attack") and !parent.getEnemiesInRange().empty():
 				return states.COMBO1
 		states.COMBO1:
-			if Input.is_action_just_pressed("attack"):
+			if Input.is_action_just_pressed("attack") and !parent.getEnemiesInRange().empty():
 				return states.COMBO2
 		states.COMBO2:
 			pass
@@ -58,12 +58,15 @@ func _enter_state(new_state, old_state):
 			$"CanvasLayer/Label".text = "Walking"
 		states.ATTACKING:
 			parent.startAttackTimer()
+			parent.dealDamage()
 			$"CanvasLayer/Label".text = "Attack"
 		states.COMBO1:
 			parent.startAttackTimer()
+			parent.dealDamage()
 			$"CanvasLayer/Label".text = "Combo 1"
 		states.COMBO2:
 			parent.startAttackTimer()
+			parent.dealDamage()
 			$"CanvasLayer/Label".text = "Combo 2"
 		states.HIT:
 			parent.startHitTimer()
@@ -74,7 +77,7 @@ func _exit_state(old_state, new_state):
 		states.IDLE:
 			pass
 		states.WALKING:
-			pass
+			parent.body.linear_velocity = Vector2()
 		states.ATTACKING:
 			pass
 		states.COMBO1:
