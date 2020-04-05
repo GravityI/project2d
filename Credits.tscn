@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://grayscaleMaterial.tres" type="Material" id=1]
+[ext_resource path="res://audio/MusicMenu.wav" type="AudioStream" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+func _ready():
+	$\"Button\".grab_focus()
+
+
+func _on_Button_pressed():
+	get_tree().change_scene(\"res://Menu.tscn\")
+"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = SubResource( 1 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -142.0
+margin_top = -49.5
+margin_right = 142.0
+margin_bottom = 49.5
+text = "Credits
+
+Programmer - Ícaro Peixoto
+Character Artist - Cleiton Moreira
+Environment Artist - Lucas Benjamin Silveira
+Game Design and Audio - João Victor Barros "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+material = ExtResource( 1 )
+margin_left = 464.0
+margin_top = 456.0
+margin_right = 563.0
+margin_bottom = 476.0
+text = "Back to Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

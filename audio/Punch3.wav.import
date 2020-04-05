@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Punch3.wav-53962e4f0e67387f971cec5417c124d6.sample"
+
+[deps]
+
+source_file="res://audio/Punch3.wav"
+dest_files=[ "res://.import/Punch3.wav-53962e4f0e67387f971cec5417c124d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
