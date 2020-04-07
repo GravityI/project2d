@@ -1,0 +1,334 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Beat n' up/suporte grade.png" type="Texture" id=1]
+[ext_resource path="res://Beat n' up/grade rasgada.png" type="Texture" id=2]
+[ext_resource path="res://Beat n' up/antena casa.png" type="Texture" id=3]
+[ext_resource path="res://Beat n' up/grade.png" type="Texture" id=4]
+[ext_resource path="res://Beat n' up/muro.png" type="Texture" id=5]
+[ext_resource path="res://Beat n' up/esgoto.png" type="Texture" id=6]
+[ext_resource path="res://Beat n' up/casa 1 finalizada.png" type="Texture" id=7]
+[ext_resource path="res://Beat n' up/casa 2.png" type="Texture" id=8]
+[ext_resource path="res://Beat n' up/saco de lixo.png" type="Texture" id=9]
+[ext_resource path="res://Beat n' up/rua.tres" type="TileSet" id=10]
+[ext_resource path="res://Beat n' up/ceu.tres" type="TileSet" id=11]
+[ext_resource path="res://Beat n' up/calçada.tres" type="TileSet" id=12]
+[ext_resource path="res://Beat n' up/lixeira.png" type="Texture" id=13]
+[ext_resource path="res://Beat n' up/papel 1.png" type="Texture" id=14]
+[ext_resource path="res://Beat n' up/hidrante.png" type="Texture" id=15]
+[ext_resource path="res://Beat n' up/papel 2.png" type="Texture" id=16]
+[ext_resource path="res://Beat n' up/sujeira.png" type="Texture" id=17]
+[ext_resource path="res://Beat n' up/iluminação.png" type="Texture" id=18]
+[ext_resource path="res://Beat n' up/rua cor.tres" type="TileSet" id=19]
+
+[node name="world" type="Node2D"]
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = ExtResource( 11 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 5, 0, 0, 10, 0, 0, 15, 0, 0, 20, 0, 0, 25, 0, 0, 30, 0, 0, 35, 0, 0, 40, 0, 0, 42, 0, 0 )
+
+[node name="muro" type="Sprite" parent="."]
+normal_map = ExtResource( 5 )
+
+[node name="muro" type="Sprite" parent="muro"]
+position = Vector2( 486.197, 187.558 )
+scale = Vector2( 1.29477, 1 )
+texture = ExtResource( 5 )
+
+[node name="muro4" type="Sprite" parent="muro/muro"]
+position = Vector2( 828.367, 0.582901 )
+scale = Vector2( 0.772338, 1 )
+texture = ExtResource( 5 )
+
+[node name="muro3" type="Sprite" parent="muro/muro"]
+position = Vector2( 882.492, 0.250748 )
+scale = Vector2( 0.772338, 1 )
+texture = ExtResource( 5 )
+
+[node name="muro2" type="Sprite" parent="muro/muro"]
+position = Vector2( 750.236, 0.250748 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="muro5" type="Sprite" parent="muro/muro"]
+position = Vector2( 660.445, 0.250748 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="muro" type="Sprite" parent="muro/muro"]
+position = Vector2( 88.1121, 0.00912476 )
+texture = ExtResource( 5 )
+
+[node name="casa 2" type="Sprite" parent="muro/muro/muro"]
+position = Vector2( 895.971, -42.1452 )
+scale = Vector2( 0.772338, 1 )
+texture = ExtResource( 8 )
+
+[node name="papel 1" type="Sprite" parent="muro/muro/muro/casa 2"]
+position = Vector2( -1454.5, 260.994 )
+texture = ExtResource( 14 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
+format = 1
+tile_data = PoolIntArray( 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327708, 0, 0, 327709, 0, 0, 327710, 0, 0, 327711, 0, 0, 327712, 0, 0, 327713, 0, 0, 327714, 0, 0, 327715, 0, 0, 327716, 0, 0, 327717, 0, 0, 327718, 0, 0, 327719, 0, 0, 327720, 0, 0, 327721, 0, 0, 327722, 0, 0, 327723, 0, 0, 327724, 0, 0, 327725, 0, 0, 327726, 0, 0, 327727, 0, 0 )
+
+[node name="TileMap" type="TileMap" parent="TileMap"]
+tile_set = ExtResource( 19 )
+format = 1
+tile_data = PoolIntArray( 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0, 393250, 0, 0, 393251, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393256, 0, 0, 393257, 0, 0, 393258, 0, 0, 393259, 0, 0, 393260, 0, 0, 393261, 0, 0, 393262, 0, 0, 393263, 0, 0 )
+
+[node name="casa 5" type="Sprite" parent="."]
+position = Vector2( 2474.97, 145.175 )
+texture = ExtResource( 8 )
+
+[node name="casa 1 finalizada3" type="Sprite" parent="."]
+position = Vector2( 2247.45, 130.441 )
+texture = ExtResource( 7 )
+
+[node name="casa 4" type="Sprite" parent="."]
+position = Vector2( 2016.93, 145.252 )
+texture = ExtResource( 8 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 12 )
+format = 1
+tile_data = PoolIntArray( 262144, 0, 0, 262147, 0, 0, 262150, 0, 0, 262153, 0, 0, 262156, 0, 0, 262159, 0, 0, 262162, 0, 0, 262165, 0, 0, 262168, 0, 0, 262171, 0, 0, 262174, 0, 0, 262177, 0, 0, 262180, 0, 0, 262183, 0, 0, 262186, 0, 0, 262189, 0, 0 )
+
+[node name="grade3" type="Sprite" parent="."]
+position = Vector2( 1356.18, 212.836 )
+texture = ExtResource( 4 )
+
+[node name="saco de lixo" type="Sprite" parent="."]
+position = Vector2( 437.67, 199.162 )
+texture = ExtResource( 9 )
+
+[node name="lixeira4" type="Sprite" parent="saco de lixo"]
+position = Vector2( 25.0902, -20.953 )
+texture = ExtResource( 13 )
+
+[node name="lixeira2" type="Sprite" parent="saco de lixo/lixeira4"]
+position = Vector2( 48.1933, 0.860947 )
+texture = ExtResource( 13 )
+
+[node name="lixeira" type="Sprite" parent="saco de lixo/lixeira4"]
+position = Vector2( 24.3379, 5.02177 )
+texture = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="saco de lixo"]
+
+[node name="saco de lixo" type="Sprite" parent="saco de lixo"]
+position = Vector2( 17.8754, -8.1832 )
+texture = ExtResource( 9 )
+
+[node name="saco de lixo2" type="Sprite" parent="saco de lixo"]
+position = Vector2( 7.21112, -12.2041 )
+texture = ExtResource( 9 )
+
+[node name="casa 1" type="Sprite" parent="."]
+position = Vector2( 70.2907, 121.895 )
+scale = Vector2( 1, 1.06782 )
+texture = ExtResource( 7 )
+
+[node name="casa 2" type="Sprite" parent="."]
+position = Vector2( 298.109, 144.431 )
+texture = ExtResource( 8 )
+
+[node name="saco de lixo3" type="Sprite" parent="."]
+position = Vector2( 629.483, 205.309 )
+texture = ExtResource( 9 )
+
+[node name="antena" type="Sprite" parent="."]
+normal_map = ExtResource( 3 )
+
+[node name="antena casa" type="Sprite" parent="antena"]
+position = Vector2( 254.339, 20.8747 )
+texture = ExtResource( 3 )
+
+[node name="lixeira3" type="Sprite" parent="."]
+position = Vector2( 610.304, 204.675 )
+texture = ExtResource( 13 )
+
+[node name="lixeira2" type="Sprite" parent="."]
+position = Vector2( 444.939, 224.963 )
+texture = ExtResource( 13 )
+
+[node name="lixeira" type="Sprite" parent="lixeira2"]
+position = Vector2( 183.016, 8.37299 )
+texture = ExtResource( 13 )
+
+[node name="sujeira" type="Sprite" parent="."]
+position = Vector2( 459.196, 240.983 )
+texture = ExtResource( 17 )
+
+[node name="sujeira" type="Sprite" parent="sujeira"]
+position = Vector2( 152.933, 3.96422 )
+texture = ExtResource( 17 )
+
+[node name="grade" type="Sprite" parent="."]
+position = Vector2( 482.06, 211.785 )
+texture = ExtResource( 4 )
+
+[node name="papel 2" type="Sprite" parent="."]
+position = Vector2( 552.285, 231.845 )
+texture = ExtResource( 16 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 53.0916, 322.44 )
+texture = ExtResource( 6 )
+
+[node name="suporte" type="Sprite" parent="."]
+position = Vector2( 537.197, 211.036 )
+texture = ExtResource( 1 )
+
+[node name="grade2" type="Sprite" parent="."]
+position = Vector2( 592.163, 211.735 )
+texture = ExtResource( 2 )
+
+[node name="casa 3" type="Sprite" parent="."]
+position = Vector2( 974.995, 144.356 )
+texture = ExtResource( 8 )
+
+[node name="casa 1 finalizada" type="Sprite" parent="."]
+position = Vector2( 747.022, 122.038 )
+scale = Vector2( 1, 1.07173 )
+texture = ExtResource( 7 )
+
+[node name="casa 1 finalizada2" type="Sprite" parent="."]
+position = Vector2( 1205.42, 126.47 )
+scale = Vector2( 1, 1.02775 )
+texture = ExtResource( 7 )
+
+[node name="saco de lixo2" type="Sprite" parent="."]
+position = Vector2( 432.974, 244.027 )
+texture = ExtResource( 9 )
+
+[node name="saco de lixo" type="Sprite" parent="saco de lixo2"]
+position = Vector2( 14.9367, -2.45293 )
+texture = ExtResource( 9 )
+
+[node name="esgoto" type="Sprite" parent="."]
+position = Vector2( 593.727, 322.217 )
+texture = ExtResource( 6 )
+
+[node name="esgoto2" type="Sprite" parent="."]
+position = Vector2( 1171.81, 322.964 )
+texture = ExtResource( 6 )
+
+[node name="esgoto3" type="Sprite" parent="."]
+position = Vector2( 1745.2, 322.583 )
+texture = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 183.869, 240.545 )
+texture = ExtResource( 13 )
+
+[node name="lixeira" type="Sprite" parent="."]
+position = Vector2( 142.501, 242.531 )
+texture = ExtResource( 13 )
+
+[node name="saco de lixo4" type="Sprite" parent="."]
+position = Vector2( 649.687, 241.986 )
+texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 340.594, 299.311 )
+texture = ExtResource( 16 )
+
+[node name="papel 1" type="Sprite" parent="."]
+position = Vector2( 329.056, 294.416 )
+texture = ExtResource( 14 )
+
+[node name="saco de lixo7" type="Sprite" parent="."]
+position = Vector2( 786.167, 272.277 )
+texture = ExtResource( 9 )
+
+[node name="saco de lixo8" type="Sprite" parent="."]
+position = Vector2( 768.544, 272.767 )
+texture = ExtResource( 9 )
+
+[node name="hidrante" type="Sprite" parent="."]
+position = Vector2( 196.188, 275.767 )
+texture = ExtResource( 15 )
+
+[node name="hidrante2" type="Sprite" parent="."]
+position = Vector2( 776.521, 278.834 )
+texture = ExtResource( 15 )
+
+[node name="hidrante" type="Sprite" parent="hidrante2"]
+position = Vector2( 570.248, -1.03094 )
+texture = ExtResource( 15 )
+
+[node name="saco de lixo5" type="Sprite" parent="hidrante2"]
+position = Vector2( 102.063, -34.1733 )
+texture = ExtResource( 9 )
+
+[node name="lixeira4" type="Sprite" parent="."]
+position = Vector2( 914.721, 241.881 )
+rotation = -0.00851821
+scale = Vector2( 1, 1 )
+texture = ExtResource( 13 )
+
+[node name="lixeira5" type="Sprite" parent="."]
+position = Vector2( 894.799, 246.977 )
+texture = ExtResource( 13 )
+
+[node name="saco de lixo5" type="Sprite" parent="."]
+position = Vector2( 914.76, 209.526 )
+texture = ExtResource( 9 )
+
+[node name="saco de lixo6" type="Sprite" parent="."]
+position = Vector2( 893.436, 215.38 )
+texture = ExtResource( 9 )
+
+[node name="papel 3" type="Sprite" parent="."]
+position = Vector2( 629.893, 360.519 )
+texture = ExtResource( 14 )
+
+[node name="papel 4" type="Sprite" parent="."]
+position = Vector2( 853.451, 295.874 )
+texture = ExtResource( 16 )
+
+[node name="papel 5" type="Sprite" parent="."]
+position = Vector2( 860.649, 292.319 )
+texture = ExtResource( 14 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 8.27191, 226.057 )
+texture = ExtResource( 18 )
+
+[node name="iluminação" type="Sprite" parent="Sprite3"]
+position = Vector2( 576.961, 0.420517 )
+texture = ExtResource( 18 )
+
+[node name="iluminação" type="Sprite" parent="Sprite3/iluminação"]
+position = Vector2( 576.067, -0.0102081 )
+texture = ExtResource( 18 )
+
+[node name="iluminação" type="Sprite" parent="Sprite3/iluminação/iluminação"]
+position = Vector2( 572.062, 0.0241852 )
+texture = ExtResource( 18 )
+
+[node name="iluminação" type="Sprite" parent="Sprite3/iluminação/iluminação/iluminação"]
+position = Vector2( 579.09, -0.00662231 )
+texture = ExtResource( 18 )
+
+[node name="iluminação" type="Sprite" parent="Sprite3/iluminação/iluminação/iluminação/iluminação"]
+position = Vector2( 580, -0.0184174 )
+texture = ExtResource( 18 )
+
+[node name="suporte grade" type="Sprite" parent="."]
+position = Vector2( 1411.32, 211.022 )
+texture = ExtResource( 1 )
+
+[node name="grade rasgada" type="Sprite" parent="."]
+position = Vector2( 1466.57, 212.836 )
+texture = ExtResource( 2 )
+
+[node name="suporte grade2" type="Sprite" parent="."]
+position = Vector2( 1521.38, 211.099 )
+texture = ExtResource( 1 )
+
+[node name="grade rasgada2" type="Sprite" parent="."]
+position = Vector2( 1576.76, 212.738 )
+texture = ExtResource( 2 )

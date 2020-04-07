@@ -39,10 +39,14 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 material = ExtResource( 1 )
-margin_left = 464.0
-margin_top = 456.0
-margin_right = 563.0
-margin_bottom = 476.0
+anchor_left = 0.5
+anchor_top = 0.838
+anchor_right = 0.5
+anchor_bottom = 0.838
+margin_left = -50.0
+margin_top = -7.96002
+margin_right = 49.0
+margin_bottom = 12.04
 text = "Back to Menu"
 __meta__ = {
 "_edit_use_anchors_": false
