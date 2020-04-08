@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Beat n' up/poça.png" type="Texture" id=1]
 [ext_resource path="res://Beat n' up/garrafa.png" type="Texture" id=2]
@@ -14,9 +14,7 @@
 [ext_resource path="res://Beat n' up/lixeira.png" type="Texture" id=12]
 [ext_resource path="res://Beat n' up/carro png.png" type="Texture" id=13]
 [ext_resource path="res://Beat n' up/grade.png" type="Texture" id=14]
-[ext_resource path="res://Beat n' up/iluminação.png" type="Texture" id=15]
 [ext_resource path="res://Beat n' up/papel 2.png" type="Texture" id=16]
-[ext_resource path="res://Beat n' up/hidrante.png" type="Texture" id=17]
 [ext_resource path="res://Beat n' up/sujeira.png" type="Texture" id=18]
 [ext_resource path="res://Beat n' up/rua.tres" type="TileSet" id=19]
 [ext_resource path="res://Beat n' up/calçada.tres" type="TileSet" id=20]
@@ -439,30 +437,6 @@ texture = ExtResource( 16 )
 position = Vector2( 329.056, 294.416 )
 texture = ExtResource( 9 )
 
-[node name="saco de lixo7" type="Sprite" parent="."]
-position = Vector2( 786.167, 272.277 )
-texture = ExtResource( 8 )
-
-[node name="saco de lixo8" type="Sprite" parent="."]
-position = Vector2( 768.544, 272.767 )
-texture = ExtResource( 8 )
-
-[node name="hidrante" type="Sprite" parent="."]
-position = Vector2( 196.188, 275.767 )
-texture = ExtResource( 17 )
-
-[node name="hidrante2" type="Sprite" parent="."]
-position = Vector2( 776.521, 278.834 )
-texture = ExtResource( 17 )
-
-[node name="hidrante" type="Sprite" parent="hidrante2"]
-position = Vector2( 570.248, -1.03094 )
-texture = ExtResource( 17 )
-
-[node name="saco de lixo5" type="Sprite" parent="hidrante2"]
-position = Vector2( 102.063, -34.1733 )
-texture = ExtResource( 8 )
-
 [node name="lixeira4" type="Sprite" parent="."]
 position = Vector2( 914.721, 241.881 )
 rotation = -0.00851821
@@ -496,30 +470,6 @@ position = Vector2( 2247.07, 124.65 )
 scale = Vector2( 1, 1.04771 )
 texture = ExtResource( 7 )
 
-[node name="iluminação" type="Sprite" parent="."]
-position = Vector2( 0.39856, 215.688 )
-texture = ExtResource( 15 )
-
-[node name="iluminação" type="Sprite" parent="iluminação"]
-position = Vector2( 579.878, -0.141937 )
-texture = ExtResource( 15 )
-
-[node name="iluminação" type="Sprite" parent="iluminação/iluminação"]
-position = Vector2( 578.108, -0.140289 )
-texture = ExtResource( 15 )
-
-[node name="iluminação" type="Sprite" parent="iluminação/iluminação/iluminação"]
-position = Vector2( 576.881, 0.326996 )
-texture = ExtResource( 15 )
-
-[node name="iluminação" type="Sprite" parent="iluminação/iluminação/iluminação/iluminação"]
-position = Vector2( 575.93, 0.244232 )
-texture = ExtResource( 15 )
-
-[node name="iluminação" type="Sprite" parent="iluminação/iluminação/iluminação/iluminação/iluminação"]
-position = Vector2( 573.057, 0.0379028 )
-texture = ExtResource( 15 )
-
 [node name="suporte grade" type="Sprite" parent="."]
 position = Vector2( 1412.04, 210.218 )
 texture = ExtResource( 3 )
@@ -548,14 +498,6 @@ texture = ExtResource( 9 )
 position = Vector2( 1137.99, 326.889 )
 texture = ExtResource( 16 )
 
-[node name="saco de lixo11" type="Sprite" parent="."]
-position = Vector2( 1137.53, 310.161 )
-texture = ExtResource( 8 )
-
-[node name="saco de lixo" type="Sprite" parent="saco de lixo11"]
-position = Vector2( -17.7238, 1.59155 )
-texture = ExtResource( 8 )
-
 [node name="papel 7" type="Sprite" parent="."]
 position = Vector2( 1769.72, 330.363 )
 scale = Vector2( 0.630592, 0.632823 )
@@ -573,10 +515,6 @@ texture = ExtResource( 13 )
 [node name="esgoto4" type="Sprite" parent="."]
 position = Vector2( 2321.4, 322.493 )
 texture = ExtResource( 5 )
-
-[node name="hidrante3" type="Sprite" parent="."]
-position = Vector2( 2502.72, 274.185 )
-texture = ExtResource( 17 )
 
 [node name="lixeira10" type="Sprite" parent="."]
 position = Vector2( 1765.3, 241.108 )
@@ -614,10 +552,6 @@ texture = ExtResource( 9 )
 position = Vector2( 969.322, 345.062 )
 scale = Vector2( 0.756751, 0.774124 )
 texture = ExtResource( 16 )
-
-[node name="saco de lixo14" type="Sprite" parent="."]
-position = Vector2( 1774.89, 310.892 )
-texture = ExtResource( 8 )
 
 [node name="Sprite5" type="Sprite" parent="."]
 position = Vector2( 17.8319, 343.128 )

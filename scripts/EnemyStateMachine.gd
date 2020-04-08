@@ -24,7 +24,7 @@ func _state_logic(delta):
 			if parent.canAttack and parent.getAnimationFrame() == 3:
 				parent.dealDamage()
 		states.FOLLOW:
-			var relativePos = body.global_position - playerBody.position
+			var relativePos = body.global_position - playerBody.global_position
 			if relativePos.x > 60:
 				velocity.x = -horizontalSpeed
 			elif relativePos.x < -60:

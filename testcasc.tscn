@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://grayscaleMaterial.tres" type="Material" id=1]
+[ext_resource path="res://scripts/CarPauseMenu.gd" type="Script" id=2]
+
+[node name="PopupMenu" type="PopupMenu"]
+pause_mode = 2
+material = ExtResource( 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -26.0
+margin_right = 61.5
+margin_bottom = 44.0
+items = [ "Continue", null, 0, false, false, 0, 0, null, "", false, "Exit To Menu", null, 0, false, false, 1, 0, null, "", false, "Quit Game", null, 0, false, false, 2, 0, null, "", false ]
+allow_search = true
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="index_pressed" from="." to="." method="_on_PopupMenu_index_pressed"]

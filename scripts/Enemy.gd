@@ -6,7 +6,7 @@ onready var combat = $"AttackArea"
 onready var player = $"../Player"
 onready var follow = $"FollowArea"
 onready var stateMachine = $"StateMachine"
-onready var sprite = $"EnemyBody/Sprite"
+onready var sprite = $"EnemyBody/YSort/Sprite"
 
 var canAttack = true
 var dealtDamage = false

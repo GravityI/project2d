@@ -9,10 +9,10 @@ func _process(delta):
 		popup()
 
 func unpause():
+	$"../..".horizontal = 0
+	$"../..".vertical = 0
+	$"../..".pressedOnce = false
 	get_tree().paused = false
-	$"../../Player".horizontal = 0
-	$"../../Player".vertical = 0
-	$"../../Player".pressedOnce = false
 
 func _on_PopupMenu_index_pressed(index):
 	unpause()

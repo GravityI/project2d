@@ -1,15 +1,14 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=57 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://scripts/AttackArea.gd" type="Script" id=3]
 [ext_resource path="res://scripts/PlayerStateMachine.gd" type="Script" id=4]
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=5]
 [ext_resource path="res://scripts/EnemyStateMachine.gd" type="Script" id=6]
-[ext_resource path="res://playerGrayscale.tres" type="Material" id=7]
 [ext_resource path="res://PauseMenu.gd" type="Script" id=8]
 [ext_resource path="res://scenario.tscn" type="PackedScene" id=9]
 [ext_resource path="res://startPursuit.gd" type="Script" id=10]
+[ext_resource path="res://Beat n' up/iluminação.png" type="Texture" id=11]
 [ext_resource path="res://Character Detective/Player Combat/8.png" type="Texture" id=12]
 [ext_resource path="res://grayscaleMaterial.tres" type="Material" id=13]
 [ext_resource path="res://Character Detective/Player Combat/7.png" type="Texture" id=14]
@@ -44,61 +43,14 @@
 [ext_resource path="res://Inimigo 1/Combat/1.png" type="Texture" id=43]
 [ext_resource path="res://Inimigo 1/Combat/2.png" type="Texture" id=44]
 [ext_resource path="res://audio/Beat Em Up4.wav" type="AudioStream" id=45]
+[ext_resource path="res://Beat n' up/hidrante.png" type="Texture" id=46]
+[ext_resource path="res://Beat n' up/saco de lixo.png" type="Texture" id=47]
 
 [sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 20 ) ],
-"loop": false,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ) ],
-"loop": false,
-"name": "dead",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 18 ) ],
-"loop": false,
-"name": "hit",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "attack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "combo2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 28 ) ],
-"loop": false,
-"name": "combo1",
-"speed": 6.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 32 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 16, 16 )
-
-[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 30 ) ],
 "loop": false,
 "name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 33 ), ExtResource( 36 ), ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ) ],
-"loop": false,
-"name": "dead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 38 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 37 ) ],
@@ -115,49 +67,615 @@ animations = [ {
 "loop": false,
 "name": "attack",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 36 ), ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ) ],
+"loop": false,
+"name": "dead",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 32 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 8 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 210, 100 )
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends Node2D
+
+func _ready():
+	pass
+
+func _process(delta):
+	global_position = $\"../Body\".global_position + Vector2(0, 30)
+"
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": false,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "combo2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "combo1",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "hit",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "dead",
+"speed": 2.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 200, 100 )
+extents = Vector2( 16, 32 )
 
-[sub_resource type="OpenSimplexNoise" id=8]
-octaves = 2
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16, 16 )
 
-[sub_resource type="NoiseTexture" id=9]
-height = 300
-noise = SubResource( 8 )
-
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 50, 100 )
 
-[node name="World" type="Node"]
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 1650, 30 )
 
-[node name="scenario" parent="." instance=ExtResource( 9 )]
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10, 300 )
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2( 300, 300 )
-script = ExtResource( 2 )
+[node name="World" type="YSort"]
+z_index = 1
 
-[node name="UILayer" type="CanvasLayer" parent="Player"]
+[node name="YSortedObjects" type="YSort" parent="."]
+z_index = 1
 
-[node name="Control" type="Control" parent="Player/UILayer"]
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="Enemy" type="YSort" parent="YSortedObjects"]
+position = Vector2( 600, 350 )
+script = ExtResource( 5 )
+
+[node name="EnemyBody" type="RigidBody2D" parent="YSortedObjects/Enemy" groups=[
+"enemy",
+]]
+collision_mask = 2
+mode = 2
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="YSort" type="YSort" parent="YSortedObjects/Enemy/EnemyBody"]
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Enemy/EnemyBody/YSort"]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy/EnemyBody"]
+shape = SubResource( 2 )
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Enemy"]
+script = ExtResource( 6 )
+
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Enemy"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+BodyPath = "../EnemyBody"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSortedObjects/Enemy/AttackArea"]
+position = Vector2( 32, -16 )
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FollowArea" type="Area2D" parent="YSortedObjects/Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy/FollowArea"]
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="YSortedObjects/Enemy"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects/Enemy"]
+
+[node name="State" type="Label" parent="YSortedObjects/Enemy/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Portrait" type="Sprite" parent="Player/UILayer/Control"]
+[node name="Health" type="Label" parent="YSortedObjects/Enemy/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_bottom = 54.0
+text = "jjjjj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy2" type="YSort" parent="YSortedObjects"]
+position = Vector2( 900, 350 )
+script = ExtResource( 5 )
+
+[node name="EnemyBody" type="RigidBody2D" parent="YSortedObjects/Enemy2" groups=[
+"enemy",
+]]
+collision_mask = 2
+mode = 2
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="YSort" type="YSort" parent="YSortedObjects/Enemy2/EnemyBody"]
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Enemy2/EnemyBody/YSort"]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy2/EnemyBody"]
+shape = SubResource( 2 )
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Enemy2"]
+script = ExtResource( 6 )
+
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Enemy2"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+BodyPath = "../EnemyBody"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSortedObjects/Enemy2/AttackArea"]
+position = Vector2( 32, -16 )
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FollowArea" type="Area2D" parent="YSortedObjects/Enemy2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy2/FollowArea"]
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="YSortedObjects/Enemy2"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects/Enemy2"]
+
+[node name="State" type="Label" parent="YSortedObjects/Enemy2/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="YSortedObjects/Enemy2/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_bottom = 54.0
+text = "jjjjj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy3" type="YSort" parent="YSortedObjects"]
+position = Vector2( 1200, 350 )
+script = ExtResource( 5 )
+
+[node name="EnemyBody" type="RigidBody2D" parent="YSortedObjects/Enemy3" groups=[
+"enemy",
+]]
+collision_mask = 2
+mode = 2
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="YSort" type="YSort" parent="YSortedObjects/Enemy3/EnemyBody"]
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Enemy3/EnemyBody/YSort"]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy3/EnemyBody"]
+shape = SubResource( 2 )
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Enemy3"]
+script = ExtResource( 6 )
+
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Enemy3"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+BodyPath = "../EnemyBody"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSortedObjects/Enemy3/AttackArea"]
+position = Vector2( 32, -16 )
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FollowArea" type="Area2D" parent="YSortedObjects/Enemy3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy3/FollowArea"]
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="YSortedObjects/Enemy3"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects/Enemy3"]
+
+[node name="State" type="Label" parent="YSortedObjects/Enemy3/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="YSortedObjects/Enemy3/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_bottom = 54.0
+text = "jjjjj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy4" type="YSort" parent="YSortedObjects"]
+position = Vector2( 1500, 350 )
+script = ExtResource( 5 )
+
+[node name="EnemyBody" type="RigidBody2D" parent="YSortedObjects/Enemy4" groups=[
+"enemy",
+]]
+collision_mask = 2
+mode = 2
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="YSort" type="YSort" parent="YSortedObjects/Enemy4/EnemyBody"]
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Enemy4/EnemyBody/YSort"]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy4/EnemyBody"]
+shape = SubResource( 2 )
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Enemy4"]
+script = ExtResource( 6 )
+
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Enemy4"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+BodyPath = "../EnemyBody"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSortedObjects/Enemy4/AttackArea"]
+position = Vector2( 32, -16 )
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FollowArea" type="Area2D" parent="YSortedObjects/Enemy4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy4/FollowArea"]
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="YSortedObjects/Enemy4"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects/Enemy4"]
+
+[node name="State" type="Label" parent="YSortedObjects/Enemy4/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="YSortedObjects/Enemy4/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_bottom = 54.0
+text = "jjjjj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy5" type="YSort" parent="YSortedObjects"]
+position = Vector2( 2000, 300 )
+script = ExtResource( 5 )
+
+[node name="EnemyBody" type="RigidBody2D" parent="YSortedObjects/Enemy5" groups=[
+"enemy",
+]]
+collision_mask = 2
+mode = 2
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="YSort" type="YSort" parent="YSortedObjects/Enemy5/EnemyBody"]
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Enemy5/EnemyBody/YSort"]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy5/EnemyBody"]
+shape = SubResource( 2 )
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Enemy5"]
+script = ExtResource( 6 )
+
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Enemy5"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+BodyPath = "../EnemyBody"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSortedObjects/Enemy5/AttackArea"]
+position = Vector2( 32, -16 )
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FollowArea" type="Area2D" parent="YSortedObjects/Enemy5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy5/FollowArea"]
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="YSortedObjects/Enemy5"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects/Enemy5"]
+
+[node name="State" type="Label" parent="YSortedObjects/Enemy5/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="YSortedObjects/Enemy5/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_bottom = 54.0
+text = "jjjjj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy6" type="YSort" parent="YSortedObjects"]
+position = Vector2( 2220, 390 )
+script = ExtResource( 5 )
+
+[node name="EnemyBody" type="RigidBody2D" parent="YSortedObjects/Enemy6" groups=[
+"enemy",
+]]
+collision_mask = 2
+mode = 2
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="YSort" type="YSort" parent="YSortedObjects/Enemy6/EnemyBody"]
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Enemy6/EnemyBody/YSort"]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy6/EnemyBody"]
+shape = SubResource( 2 )
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Enemy6"]
+script = ExtResource( 6 )
+
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Enemy6"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+BodyPath = "../EnemyBody"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSortedObjects/Enemy6/AttackArea"]
+position = Vector2( 32, -16 )
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FollowArea" type="Area2D" parent="YSortedObjects/Enemy6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy6/FollowArea"]
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="YSortedObjects/Enemy6"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects/Enemy6"]
+
+[node name="State" type="Label" parent="YSortedObjects/Enemy6/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="YSortedObjects/Enemy6/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_bottom = 54.0
+text = "jjjjj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy7" type="YSort" parent="YSortedObjects"]
+position = Vector2( 2600, 300 )
+script = ExtResource( 5 )
+
+[node name="EnemyBody" type="RigidBody2D" parent="YSortedObjects/Enemy7" groups=[
+"enemy",
+]]
+collision_mask = 2
+mode = 2
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="YSort" type="YSort" parent="YSortedObjects/Enemy7/EnemyBody"]
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Enemy7/EnemyBody/YSort"]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy7/EnemyBody"]
+shape = SubResource( 2 )
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Enemy7"]
+script = ExtResource( 6 )
+
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Enemy7"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+BodyPath = "../EnemyBody"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSortedObjects/Enemy7/AttackArea"]
+position = Vector2( 32, -16 )
+shape = SubResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FollowArea" type="Area2D" parent="YSortedObjects/Enemy7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Enemy7/FollowArea"]
+shape = SubResource( 4 )
+
+[node name="AttackTimer" type="Timer" parent="YSortedObjects/Enemy7"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects/Enemy7"]
+
+[node name="State" type="Label" parent="YSortedObjects/Enemy7/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="YSortedObjects/Enemy7/CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 40.0
+margin_bottom = 54.0
+text = "jjjjj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="YSort" parent="YSortedObjects"]
+position = Vector2( 300, 300 )
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="UILayer" type="CanvasLayer" parent="YSortedObjects/Player"]
+
+[node name="Control" type="Control" parent="YSortedObjects/Player/UILayer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Portrait" type="Sprite" parent="YSortedObjects/Player/UILayer/Control"]
 texture = ExtResource( 16 )
 centered = false
 
-[node name="ProgressBar" type="ProgressBar" parent="Player/UILayer/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="YSortedObjects/Player/UILayer/Control"]
 anchor_left = 0.16
 anchor_top = 0.078
 anchor_right = 0.16
@@ -174,38 +692,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="Player/UILayer/Control/ProgressBar"]
+[node name="Tween" type="Tween" parent="YSortedObjects/Player/UILayer/Control/ProgressBar"]
 
-[node name="StateMachine" type="Node" parent="Player"]
+[node name="SpritePivot" type="Position2D" parent="YSortedObjects/Player"]
+position = Vector2( 0, -300 )
+z_index = 1
+z_as_relative = false
+script = SubResource( 5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="YSortedObjects/Player/SpritePivot"]
+position = Vector2( 0, -30 )
+frames = SubResource( 6 )
+animation = "combo2"
+frame = 5
+playing = true
+
+[node name="StateMachine" type="Node" parent="YSortedObjects/Player"]
 script = ExtResource( 4 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/StateMachine"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="YSortedObjects/Player/StateMachine"]
 
-[node name="Body" type="RigidBody2D" parent="Player" groups=[
+[node name="Body" type="RigidBody2D" parent="YSortedObjects/Player" groups=[
 "player",
 ]]
+z_index = 1
 collision_mask = 2
 mode = 2
 gravity_scale = 0.0
 can_sleep = false
 
-[node name="Sprite" type="AnimatedSprite" parent="Player/Body"]
-frames = SubResource( 1 )
-animation = "combo2"
-frame = 5
-playing = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/Player/Body"]
+shape = SubResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Body"]
-shape = SubResource( 2 )
-
-[node name="Sprite2" type="Sprite" parent="Player/Body"]
-visible = false
-light_mask = 2
-material = ExtResource( 7 )
-scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="Player/Body"]
+[node name="Camera2D" type="Camera2D" parent="YSortedObjects/Player/Body"]
 offset = Vector2( 0, -64 )
 current = true
 limit_left = 0
@@ -215,96 +734,25 @@ drag_margin_v_enabled = true
 drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 
-[node name="AttackArea" type="Area2D" parent="Player"]
+[node name="AttackArea" type="Area2D" parent="YSortedObjects/Player"]
 script = ExtResource( 3 )
 BodyPath = "../Body"
 
-[node name="AttackShape" type="CollisionShape2D" parent="Player/AttackArea"]
+[node name="AttackShape" type="CollisionShape2D" parent="YSortedObjects/Player/AttackArea"]
 position = Vector2( 32, -8 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
-[node name="Enemy" type="Node2D" parent="."]
-position = Vector2( 600, 350 )
-script = ExtResource( 5 )
+[node name="PursuitArea" type="Area2D" parent="YSortedObjects"]
+position = Vector2( 2700, 0 )
+script = ExtResource( 10 )
 
-[node name="EnemyBody" type="RigidBody2D" parent="Enemy" groups=[
-"enemy",
-]]
-collision_mask = 2
-mode = 2
-gravity_scale = 0.0
-can_sleep = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/PursuitArea"]
+position = Vector2( 196, 352 )
+shape = SubResource( 9 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Enemy/EnemyBody"]
-frames = SubResource( 4 )
-animation = "attack"
-frame = 4
-playing = true
+[node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/EnemyBody"]
-shape = SubResource( 5 )
-
-[node name="StateMachine" type="Node" parent="Enemy"]
-script = ExtResource( 6 )
-
-[node name="AttackArea" type="Area2D" parent="Enemy"]
-collision_layer = 3
-collision_mask = 3
-script = ExtResource( 3 )
-BodyPath = "../EnemyBody"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemy/AttackArea"]
-position = Vector2( 32, -16 )
-shape = SubResource( 6 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="FollowArea" type="Area2D" parent="Enemy"]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/FollowArea"]
-shape = SubResource( 7 )
-
-[node name="AttackTimer" type="Timer" parent="Enemy"]
-wait_time = 2.0
-one_shot = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Enemy"]
-
-[node name="State" type="Label" parent="Enemy/CanvasLayer"]
-visible = false
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -40.0
-margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Health" type="Label" parent="Enemy/CanvasLayer"]
-visible = false
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -40.0
-margin_top = 40.0
-margin_bottom = 54.0
-text = "jjjjj"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Light2D" type="Light2D" parent="."]
-visible = false
-position = Vector2( -1.52588e-05, -4.00001 )
-texture = SubResource( 9 )
-texture_scale = 2.0
-color = Color( 0.498039, 0.482353, 0.482353, 1 )
-energy = 2.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PopupMenu" type="PopupMenu" parent="CanvasLayer"]
+[node name="PopupMenu" type="PopupMenu" parent="YSortedObjects/CanvasLayer"]
 pause_mode = 2
 material = ExtResource( 13 )
 anchor_left = 0.5
@@ -322,17 +770,112 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="intermied" type="Node2D" parent="YSortedObjects"]
+position = Vector2( 0, 270 )
+
+[node name="iluminação6" type="Sprite" parent="YSortedObjects/intermied"]
+position = Vector2( 2884.25, -53.9851 )
+texture = ExtResource( 11 )
+
+[node name="iluminação5" type="Sprite" parent="YSortedObjects/intermied"]
+position = Vector2( 2311.2, -54.023 )
+texture = ExtResource( 11 )
+
+[node name="iluminação4" type="Sprite" parent="YSortedObjects/intermied"]
+position = Vector2( 1735.27, -54.2672 )
+texture = ExtResource( 11 )
+
+[node name="iluminação3" type="Sprite" parent="YSortedObjects/intermied"]
+position = Vector2( 1158.38, -54.5942 )
+texture = ExtResource( 11 )
+
+[node name="iluminação2" type="Sprite" parent="YSortedObjects/intermied"]
+position = Vector2( 580.277, -54.4539 )
+texture = ExtResource( 11 )
+
+[node name="iluminação" type="Sprite" parent="YSortedObjects/intermied"]
+position = Vector2( 0.39856, -54.312 )
+texture = ExtResource( 11 )
+
+[node name="hidrante" type="Sprite" parent="YSortedObjects"]
+position = Vector2( 184, 278.834 )
+texture = ExtResource( 46 )
+
+[node name="saco de lixo7" type="Sprite" parent="YSortedObjects"]
+position = Vector2( 786.167, 272.277 )
+texture = ExtResource( 47 )
+
+[node name="saco de lixo8" type="Sprite" parent="YSortedObjects"]
+position = Vector2( 768.544, 272.767 )
+texture = ExtResource( 47 )
+
+[node name="hidrante2" type="Sprite" parent="YSortedObjects"]
+position = Vector2( 776.521, 278.834 )
+texture = ExtResource( 46 )
+
+[node name="hidrante" type="Sprite" parent="YSortedObjects/hidrante2"]
+position = Vector2( 570.248, -1.03094 )
+texture = ExtResource( 46 )
+
+[node name="saco de lixo11" type="Sprite" parent="YSortedObjects"]
+position = Vector2( 1137.53, 310.161 )
+texture = ExtResource( 47 )
+
+[node name="saco de lixo" type="Sprite" parent="YSortedObjects/saco de lixo11"]
+position = Vector2( -17.7238, 1.59155 )
+texture = ExtResource( 47 )
+
+[node name="saco de lixo14" type="Sprite" parent="YSortedObjects"]
+position = Vector2( 1774.89, 310.892 )
+texture = ExtResource( 47 )
+
+[node name="hidrante3" type="Sprite" parent="YSortedObjects"]
+position = Vector2( 2502.72, 274.185 )
+texture = ExtResource( 46 )
+
+[node name="scenario" parent="." instance=ExtResource( 9 )]
+
+[node name="saco de lixo7" type="Sprite" parent="scenario"]
+position = Vector2( 878.584, 244.661 )
+texture = ExtResource( 47 )
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 45 )
 autoplay = true
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 2700, 0 )
-script = ExtResource( 10 )
+[node name="borders" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 196, 352 )
+[node name="wall" type="StaticBody2D" parent="borders"]
+position = Vector2( 1500, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/wall"]
 shape = SubResource( 10 )
-[connection signal="timeout" from="Enemy/AttackTimer" to="Enemy" method="_on_AttackTimer_timeout"]
-[connection signal="index_pressed" from="CanvasLayer/PopupMenu" to="CanvasLayer/PopupMenu" method="_on_PopupMenu_index_pressed"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+
+[node name="wall2" type="StaticBody2D" parent="borders"]
+position = Vector2( 1500, 480 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/wall2"]
+position = Vector2( 3.99988, -20 )
+shape = SubResource( 10 )
+
+[node name="wall3" type="StaticBody2D" parent="borders"]
+position = Vector2( 0, 200 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/wall3"]
+shape = SubResource( 11 )
+
+[node name="wall4" type="StaticBody2D" parent="borders"]
+position = Vector2( 3050, 200 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/wall4"]
+shape = SubResource( 11 )
+[connection signal="timeout" from="YSortedObjects/Enemy/AttackTimer" to="YSortedObjects/Enemy" method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="YSortedObjects/Enemy2/AttackTimer" to="YSortedObjects/Enemy2" method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="YSortedObjects/Enemy3/AttackTimer" to="YSortedObjects/Enemy3" method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="YSortedObjects/Enemy4/AttackTimer" to="YSortedObjects/Enemy4" method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="YSortedObjects/Enemy5/AttackTimer" to="YSortedObjects/Enemy5" method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="YSortedObjects/Enemy6/AttackTimer" to="YSortedObjects/Enemy6" method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="YSortedObjects/Enemy7/AttackTimer" to="YSortedObjects/Enemy7" method="_on_AttackTimer_timeout"]
+[connection signal="body_entered" from="YSortedObjects/PursuitArea" to="YSortedObjects/PursuitArea" method="_on_Area2D_body_entered"]
+[connection signal="index_pressed" from="YSortedObjects/CanvasLayer/PopupMenu" to="YSortedObjects/CanvasLayer/PopupMenu" method="_on_PopupMenu_index_pressed"]

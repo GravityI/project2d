@@ -8,11 +8,12 @@ var horizontalSpeed = 100
 var attacking = false
 var health = 5
 var dealtDamage = false
+var pressedOnce = false
 
 onready var stateMachine = $"StateMachine"
 onready var body = $"Body"
 onready var combat = $"AttackArea"
-onready var sprite = $"Body/Sprite"
+onready var sprite = $"SpritePivot/Sprite"
 onready var barTween = $"UILayer/Control/ProgressBar/Tween"
 onready var audioPlayer = $"StateMachine/AudioStreamPlayer"
 onready var attackSound1 = load("res://audio/Punch1.wav")
@@ -30,22 +31,35 @@ func movement():
 
 func twoAxisInput():
 		if Input.is_action_just_pressed("ui_up"):
+			if !pressedOnce and (Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")):
+				return
 			vertical -= 1
+			pressedOnce = true
 		if Input.is_action_just_pressed("ui_down"):
+			if !pressedOnce and (Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")):
+				return
 			vertical += 1
+			pressedOnce = true
 		if Input.is_action_just_pressed("ui_left"):
+			if !pressedOnce and (Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_right")):
+				return
 			horizontal -= 1
+			pressedOnce = true
 		if Input.is_action_just_pressed("ui_right"):
+			if !pressedOnce and (Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_up")):
+				return
 			horizontal += 1
+			pressedOnce = true
 		
-		if Input.is_action_just_released("ui_up"):
-			vertical += 1
-		if Input.is_action_just_released("ui_down"):
-			vertical -= 1
-		if Input.is_action_just_released("ui_left"):
-			horizontal += 1
-		if Input.is_action_just_released("ui_right"):
-			horizontal -= 1
+		if pressedOnce:
+			if Input.is_action_just_released("ui_up"):
+				vertical += 1
+			if Input.is_action_just_released("ui_down"):
+				vertical -= 1
+			if Input.is_action_just_released("ui_left"):
+				horizontal += 1
+			if Input.is_action_just_released("ui_right"):
+				horizontal -= 1
 		
 		if horizontal > 0 and stateMachine.state in [stateMachine.states.WALKING, stateMachine.states.IDLE]: 
 			sprite.scale.x = 1
