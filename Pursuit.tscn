@@ -31,7 +31,9 @@ script = ExtResource( 11 )
 wait_time = 7.0
 autostart = true
 
-[node name="Timer" type="Timer" parent="gameManager"]
+[node name="gameTimer" type="Timer" parent="gameManager"]
+wait_time = 90.0
+autostart = true
 
 [node name="CarBody" type="RigidBody2D" parent="." groups=[
 "player",
@@ -233,3 +235,4 @@ shape = SubResource( 3 )
 [node name="blackScreen" type="Sprite" parent="."]
 script = ExtResource( 12 )
 [connection signal="timeout" from="gameManager/spawnTimer" to="gameManager" method="_on_spawnTimer_timeout"]
+[connection signal="timeout" from="gameManager/gameTimer" to="gameManager" method="_on_gameTimer_timeout"]
