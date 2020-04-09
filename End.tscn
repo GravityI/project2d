@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="Node" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -83.4669
+margin_top = -7.0
+margin_right = 80.5331
+margin_bottom = 7.0
+text = "Esperando a imagem final"
+__meta__ = {
+"_edit_use_anchors_": false
+}

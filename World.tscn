@@ -58,14 +58,14 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ) ],
-"loop": false,
-"name": "hit",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 35 ), ExtResource( 40 ), ExtResource( 40 ) ],
 "loop": false,
 "name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 31 ), ExtResource( 31 ) ],
+"loop": false,
+"name": "hit",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 33 ), ExtResource( 36 ), ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ), null, ExtResource( 42 ) ],
@@ -100,19 +100,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 17 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "combo2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 28 ) ],
+"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 26 ) ],
 "loop": false,
-"name": "combo1",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "walk",
+"name": "attack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 18 ) ],
@@ -120,15 +120,15 @@ animations = [ {
 "name": "hit",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "attack",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ) ],
 "loop": false,
 "name": "dead",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "combo1",
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
