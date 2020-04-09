@@ -4,7 +4,7 @@ const moveSpeed = 100
 
 var vertical = 0
 var horizontal = 0
-var pressedOnce = true
+var pressedOnce = false
 
 func _ready():
 	pass

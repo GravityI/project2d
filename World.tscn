@@ -747,7 +747,7 @@ position = Vector2( 2700, 0 )
 script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSortedObjects/PursuitArea"]
-position = Vector2( 196, 352 )
+position = Vector2( 217.63, 355.605 )
 shape = SubResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="YSortedObjects"]
