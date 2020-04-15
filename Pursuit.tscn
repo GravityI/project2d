@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://pursuit scene/carro png.png" type="Texture" id=1]
 [ext_resource path="res://scripts/PlayerCar.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scripts/roadManager.gd" type="Script" id=10]
 [ext_resource path="res://scripts/CarSpawner.gd" type="Script" id=11]
 [ext_resource path="res://scripts/blackScreen.gd" type="Script" id=12]
+[ext_resource path="res://scripts/levelBar.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 70, 5 )
@@ -28,11 +29,11 @@ extents = Vector2( 10, 100 )
 script = ExtResource( 11 )
 
 [node name="spawnTimer" type="Timer" parent="gameManager"]
-wait_time = 7.0
+wait_time = 8.0
 autostart = true
 
 [node name="gameTimer" type="Timer" parent="gameManager"]
-wait_time = 90.0
+wait_time = 120.0
 autostart = true
 
 [node name="CarBody" type="RigidBody2D" parent="." groups=[
@@ -50,6 +51,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="CarBody/SpritePivot"]
 texture = ExtResource( 1 )
+offset = Vector2( 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarBody"]
 position = Vector2( 0, 10 )
@@ -59,6 +61,10 @@ shape = SubResource( 1 )
 
 [node name="PopupMenu" parent="CarBody/CanvasLayer" instance=ExtResource( 4 )]
 items = [ "Continue", null, 0, false, false, 0, 0, null, "", false, "Exit To Menu", null, 0, false, false, 1, 0, null, "", false, "Quit Game", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="Timer" type="Timer" parent="CarBody"]
+wait_time = 0.05
+autostart = true
 
 [node name="scenario" type="Node2D" parent="."]
 
@@ -196,7 +202,7 @@ position = Vector2( 454.432, 280.886 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 3 )
-autoplay = true
+volume_db = -1.0
 
 [node name="borders" type="Node" parent="."]
 
@@ -234,5 +240,23 @@ shape = SubResource( 3 )
 
 [node name="blackScreen" type="Sprite" parent="."]
 script = ExtResource( 12 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="levelBar" type="ProgressBar" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -14.0
+margin_right = 54.5
+max_value = 130.0
+percent_visible = false
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="gameManager/spawnTimer" to="gameManager" method="_on_spawnTimer_timeout"]
 [connection signal="timeout" from="gameManager/gameTimer" to="gameManager" method="_on_gameTimer_timeout"]
+[connection signal="timeout" from="CarBody/Timer" to="CarBody" method="_on_Timer_timeout"]

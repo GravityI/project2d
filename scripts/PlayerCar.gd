@@ -40,7 +40,10 @@ func twoAxisInput():
 			horizontal += 1
 		if Input.is_action_just_released("ui_right"):
 			horizontal -= 1
-	
+
 func _process(_delta):
 	twoAxisInput()
 	linear_velocity = Vector2(horizontal, vertical)* moveSpeed
+
+func _on_Timer_timeout():
+	$"SpritePivot/Sprite".offset.y *= -1
