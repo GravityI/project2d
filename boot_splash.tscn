@@ -4,12 +4,22 @@
 [ext_resource path="res://splashScreen.webm" type="VideoStream" id=2]
 
 [node name="VideoPlayer" type="VideoPlayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.562
+margin_top = -278.864
+margin_right = 1442.44
+margin_bottom = 801.136
 grow_horizontal = 2
 grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
 stream = ExtResource( 2 )
 autoplay = true
+expand = false
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = 9
+var health = 6
 
 onready var combat = $"AttackArea"
 onready var player = $"../Player"

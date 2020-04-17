@@ -11,4 +11,4 @@ func _on_spawnTimer_timeout():
 
 
 func _on_gameTimer_timeout():
-	get_tree().change_scene("res://End.tscn")
+	get_tree().change_scene("res://imageScenes/end.tscn")

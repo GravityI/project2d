@@ -5,6 +5,7 @@ const moveSpeed = 100
 var vertical = 0
 var horizontal = 0
 var pressedOnce = false
+var health = 3
 
 func _ready():
 	pass

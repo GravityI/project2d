@@ -115,15 +115,15 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "attack",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 29 ), ExtResource( 28 ) ],
 "loop": false,
 "name": "combo1",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 14 ) ],
 "loop": false,
@@ -711,6 +711,7 @@ playing = true
 script = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="YSortedObjects/Player/StateMachine"]
+volume_db = -10.0
 
 [node name="Body" type="RigidBody2D" parent="YSortedObjects/Player" groups=[
 "player",
@@ -842,7 +843,7 @@ texture = ExtResource( 47 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 45 )
-volume_db = -1.0
+volume_db = -10.0
 autoplay = true
 
 [node name="borders" type="Node" parent="."]
